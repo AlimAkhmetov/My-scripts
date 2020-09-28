@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>ToDoList</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="jquery-3.3.1.min.js"></script>
+
+	<script src="script.js"></script>
+</head>
+<body>
+	<main>
+		<div id="fixed-container">
+			<!-- Левая часть -->
+			<section class="block" id="left-container">
+				<div id="List">
+					<h2>Список дел:</h2>
+
+					<p id="listempty">Список пуст...</p>
+					
+					<!-- <div id="dela-container">
+						<div class="dela-head">
+							<p></p>
+
+							<button type="button" class="img-del"></button>
+
+							<button type="button" class="img-svr"></button>
+
+							<button type="button" class="img-svr2"></button>
+						</div>
+
+						<div class="dela-footer">
+							<p></p>
+						</div>
+					</div> -->
+				</div>
+
+			</section>
+			<!-- Правая часть -->
+			<section class="block" id="right-container">
+				<h2>Добавить новое дело</h2>
+
+				<form>
+					<div id="granica">
+						<p class="text">* Название</p>
+
+						<input class="name-delo" type="text" name="name" placeholder="Введите название дела" required="required" id="foo">
+
+						<p class="text">* Описание</p>
+
+						<textarea placeholder="Введите опиание дела" name="textarea" class="description-delo"></textarea>
+
+						<button type="sumbit" class="add-task" name="dob-dela">Добавить дело</button>
+					</div>
+				</form>	
+			</section>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,130 @@
+Урок_1:
+
+alert("YES") - сообщение с кнопкой ок;
+
+console.log() - вывод в консоль;
+
+function printRandomNumber () - создание функции;
+{
+	console.log(Math.random());
+}
+
+printRandomNumber(); - вызов функции;
+
+setTimeout(аргумент, 1500) - вызов операции через определенное время;
+
+Урок_2: 
+
+$(function(){						 - задает функцию , которая печатает текст из блока div в консоль (Обязтелен, этот код начинает работать после загрузки всех элементов сайта);
+	console.log($('div').text());
+})
+
+$(function(){		
+	$('div').css('color', 'red'); 			 - задает цвет содержимому блока div;
+});
+
+$(function(){		
+	function Name (){
+		$('#container').toggleClass('newStyle'); - для блока #container задает стиль, описанный в CSS с названием .newStyle (если стиля нет в этом блоке, то функция toggleClass добавляет его, а если есть - убирает);
+	}
+	setInterval(Name, 1500);			 - вызывает функцию Name с интервалом 1,5 секунды;
+})
+
+Урок_3:
+
+$(function(){		
+	function Name (){
+		$('#container').toggleClass('newStyle');
+	}
+	$('button').on('click, function(){		 - при нажатии на кнопку, вызываеться функция Name, которая изменяет стиль #container;
+		Name();
+	}')			
+})
+
+on.('mouseover') - при наведении мыши;
+on.('dbclick') - при двойном нажатии;
+on.('keyup') - при нажатии на клавишу (в момент ее отпущения);
+on.('keydown') - при нажатии на клавишу (в момент ее нажатия);
+
+$(function(){		
+	function Name (){
+		$('#container').toggleClass('newStyle');
+	}
+	$('textarea').on('keydown, function(event){		
+		if (event.witch < 48 || event.witch > 57) - если введенное значение не совпадает с кодом цифр, то выводиться false (ПЕЧАТАЮТЬСЯ ТОЛЬКО ЦИФРЫ);
+		{
+			return: false;
+		}
+	}')			
+})
+
+Урок_4
+
+$(function(){		
+	$('#changebutton')				  - задает стили кнопке;
+		.css({
+			'margin-left': '20px',
+			'margin-bottom': '40px',
+		}) 
+		.clck(function(){			  - при нажатии на кнопку меняет стиль new-time;
+			$('#new-time').css('color', 'red')	
+		});
+});		
+
+ДОБАВИТЬ 9:40 - 11:40;
+
+.parent(); - берет родителя;
+.parents('#news-items'); - берет задоного родителя;
+.next(); - следующий элемsент;
+.prev(); - предыдущий;
+.children() - дочерние элементы(элементы, которые находяться внутри задыанного блока);
+.firt() - первы(беретиз множества первый элемент);
+
+$(function(){		
+	$('#changebutton')				 
+		.clck(function(){			  
+			$('#news-item').first().html('<small>Заменяет на этот текст</small>') - заменяет при нажатии на кнопку первы элемент (<h2>Новости дня</h2>) на 												<small>Заменяет на этот текст</small>	
+		});
+});
+
+.remove(); - удаляет элемент;
+.prepend(); - добовлет элемент в начало;
+.appwnd(); - добовлет элемент в конец;	
+
+ДОБАВИТЬ 20:00 - 21:40;
+
+Урок 5
+
+$(function(){		
+	$('#changebutton')				 
+		.clck(function(){			  
+			var header == $('#colum-left');						- создаем переменную header и записываем в нее блок #colum-left;
+			if ( header.css('display') == 'block'){					- условие выполняеться если блок видимый;
+				header.css('display', 'noone');					- делает блок невидимым;
+			}
+			else {
+				header.css('display', block);					- делает блок видимым;
+			}							
+		});
+});
+
+Тоже самое толькл на Jqueri:
+
+$(function(){		
+	$('#changebutton')				 
+		.clck(function(){			  
+			var header == $('#colum-left');						- создаем переменную header и записываем в нее блок #colum-left;
+			if ( header.is(':visible')){						- условие выполняеться если блок видимый;
+				header.hide();							- делает блок невидимым;
+			}
+			else {
+				header.show();							- делает блок видимым;
+			}							
+		});
+});
+
+fadeIn(время в мл секундах); - показывает объект плавно;
+fadeOut(время в мл секундах); - скрывает плавно;
+
+var Название_функции function(){ - более правильное создание функции;
+}

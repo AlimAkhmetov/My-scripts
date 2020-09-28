@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- JQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Popup</title>
+</head>
+<body>
+    <section class="popup">
+        <div class="popup__inner">
+            <h2>Заголовок</h2>
+
+            <div class="close">Отмена</div>
+        </div>
+    </section>
+    
+    <header class="header">
+        <nav class="navigation">
+            <menu class="menu">
+                <li class="menu__item popup-link">Popup</li>
+                <li class="menu__item popup-link">Popup</li>
+                <li class="menu__item popup-link">Popup</li>
+                <li class="menu__item popup-link">Popup</li>
+                <li class="menu__item popup-link">Popup</li>
+            </menu>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2 class="popup-link">Popup</h2>
+
+        <h2 class="popup-link">Popup</h2>
+
+        <h2 class="popup-link">Popup</h2>
+
+        <h2 class="popup-link">Popup</h2>
+
+        <h2 class="popup-link">Popup</h2>
+
+        <h2 class="popup-link">Popup</h2>
+    </main>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        menu {
+            margin-top: 50px;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        h2 {
+            margin-top: 300px;
+            text-align: center;
+        }
+
+        .popup {
+            display: none;
+            z-index: 99;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: grey;
+        }
+
+        .popup__inner {
+            width: 50%;
+            height: 50%;
+            background-color: yellow;
+        }
+
+        .close {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        // Popup
+        $(document).ready(function() {
+            // открыть по кнопке
+            $('.popup-link').click(function() { 
+                
+                $('.popup').fadeIn().css("display", "flex");
+                $("html,body").css("overflow","hidden");
+                // $('.popup').addClass('disabled');
+            });
+
+            // закрыть на крестик
+            $('.close').click(function() { 
+                $('.popup').fadeOut();
+                $("html,body").css("overflow","visible");
+            });
+
+            // закрыть по клику вне окна
+            $(document).mouseup(function (e) { 
+                let popup = $('.popup__inner');
+                if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+                    $('.popup').fadeOut();
+                    $("html,body").css("overflow","visible");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
